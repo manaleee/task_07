@@ -6,7 +6,16 @@
     </head>
     <body>
         {% for restaurant in restaurants %}
-            <a href="{% url 'restaurant-detail' restaurant.id %}">
+            <ul>
+                <li>
+                    <h1>{{restaurant.name}}
+                </li>
+
+                <li>
+                    <a href="{% url 'restaurant-detail' restaurant.id %}">
+                </li>
+            </ul>
+            <br>    
                 <ul>
                     <li>{{restaurant.name}}</li>
                     <li>{{restaurant.description}}</li>
@@ -14,6 +23,7 @@
                     <li>{{restaurant.closing_time}}</li>
                 </ul>
             </a>
+            <h1>DELETE</h1>
         {% endfor %}
     </body>
 </html>

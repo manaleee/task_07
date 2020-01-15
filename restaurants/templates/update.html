@@ -2,9 +2,36 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Update</title>
+        <title>update</title>
     </head>
     <body>
+        {% for restaurant in restaurants %}
+        <form action="{% url 'update-view' object_id=obj.id %}" method="POST">
+   			{% csrf_token %}
+            {{form}}
+            <input type="submit" value="Update">
+        </form>
 
+
+            <ul>
+                <li>
+                    <h1>{{restaurant.name}}
+                </li>
+
+                <li>
+                    <a href="{% url 'restaurant-detail' restaurant.id %}">
+                </li>
+            </ul>
+            <br>    
+                <ul>
+                    <li>{{restaurant.name}}</li>
+                    <li>{{restaurant.description}}</li>
+                    <li>{{restaurant.opening_time}}</li>
+                    <li>{{restaurant.closing_time}}</li>
+                </ul>
+            </a>
+
+            <h1>UPDATE</h1>
+        {% endfor %}
     </body>
 </html>
